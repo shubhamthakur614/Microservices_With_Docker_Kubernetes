@@ -1,4 +1,4 @@
-his is my new microservices project, designed to demonstrate and implement various cutting-edge technologies that are essential in modern application development. The project showcases how microservices architecture can be efficiently deployed and managed using Docker, Kubernetes, Helm, and incorporates microservices security best practices.
+This is my new microservices project, designed to demonstrate and implement various cutting-edge technologies that are essential in modern application development. The project showcases how microservices architecture can be efficiently deployed and managed using Docker, Kubernetes, Helm, and incorporates microservices security best practices.
 
 The project begins by utilizing Docker for containerization, which enables the packaging of microservices and their dependencies into lightweight, portable containers. Docker ensures that each microservice, regardless of the environment, runs consistently across development, testing, and production stages. This approach simplifies the deployment process and enhances scalability.
 
