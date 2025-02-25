@@ -6,7 +6,6 @@ import com.vwits.accounts.dto.CustomerDto;
 import com.vwits.accounts.dto.ResponseDto;
 import com.vwits.accounts.service.IAccountsService;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,9 +31,7 @@ public class AccountsController {
 
 
     @GetMapping("/fetch")
-    public ResponseEntity<CustomerDto> fetchAllDetail(@RequestParam
-                                                      @Pattern(message = "Mobile Number Must be 10 Digits", regexp = "(^$|[0-9]{10})")
-                                                      String mobileNumber) {
+    public ResponseEntity<CustomerDto> fetchAllDetails( @RequestParam String mobileNumber) {
         CustomerDto customerDto = iAccountsService.fetchAllDetails(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(customerDto);
     }
@@ -52,9 +49,7 @@ public class AccountsController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<ResponseDto> deleteAccount(@RequestParam
-                                                     @Pattern(message = "Mobile Number Must be 10 Digits", regexp = "(^$|[0-9]{10})")
-                                                     String mobileNumber) {
+    public ResponseEntity<ResponseDto> deleteAccount(@RequestParam String mobileNumber) {
         boolean isDeleted = iAccountsService.deleteAccount(mobileNumber);
         if (isDeleted) {
             return ResponseEntity.status(HttpStatus.OK)
