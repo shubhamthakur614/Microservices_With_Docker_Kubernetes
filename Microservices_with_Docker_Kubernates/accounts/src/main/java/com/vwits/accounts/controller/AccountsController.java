@@ -21,8 +21,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(
-        name = "EasyBank Account Management APIs",
-        description = "The EasyBank Account Management API offers a full set of RESTful endpoints for performing CRUD operations on customer accounts. It supports the creation, updating, deletion, and retrieval of account details, ensuring efficient and seamless account management."
+        name = "MyBank Account Management APIs",
+        description = "The MyBank Account Management API offers a full set of RESTful endpoints for performing CRUD operations on customer accounts. It supports the creation, updating, deletion, and retrieval of account details, ensuring efficient and seamless account management."
 )
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})

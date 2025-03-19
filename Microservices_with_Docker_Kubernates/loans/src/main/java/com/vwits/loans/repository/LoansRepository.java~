@@ -1,0 +1,4 @@
+package com.vwits.loans.repository;
+
+public class LoansRepository {
+}
