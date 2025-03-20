@@ -31,7 +31,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
         ),
         externalDocs = @ExternalDocumentation(
                 description = "Loans microservice REST API Documentation",
-                url = "https://www.vwits.in"
+                url = "https://github.com/shubhamthakur614/Microservices_With_Docker_Kubernetes/tree/master/Microservices_with_Docker_Kubernates/loans"
         )
 )
 public class LoansApplication {
