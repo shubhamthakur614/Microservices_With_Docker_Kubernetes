@@ -6,13 +6,15 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.3</version>
+
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.vwits</groupId>
-	<artifactId>cards</artifactId>
+	<artifactId>loans</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cards</name>
-	<description>Cards microservice</description>
+	<packaging>jar</packaging>
+	<name>loans</name>
+	<description>Loans microservice</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -95,6 +97,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>shubhamthakur614/loans:v1</name>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

@@ -1,35 +1,35 @@
 package com.vwits.accounts.service;
 
 import com.vwits.accounts.dto.CustomerDto;
-import org.springframework.web.bind.annotation.RequestParam;
 
 public interface IAccountsService {
 
-
     /**
      *
-     * @param customerDto
+     * @param customerDto - CustomerDto Object
      */
     void createAccount(CustomerDto customerDto);
 
     /**
      *
-     * @param mobileNumber
-     * @return
+     * @param mobileNumber - Input Mobile Number
+     * @return Accounts Details based on a given mobileNumber
      */
-    CustomerDto fetchAllDetails( String mobileNumber);
+    CustomerDto fetchAccount(String mobileNumber);
 
     /**
      *
-     * @param customerDto
-     * @return
+     * @param customerDto - CustomerDto Object
+     * @return boolean indicating if the update of Account details is successful or not
      */
     boolean updateAccount(CustomerDto customerDto);
 
     /**
      *
-     * @param mobileNumber
-     * @return
+     * @param mobileNumber - Input Mobile Number
+     * @return boolean indicating if the delete of Account details is successful or not
      */
     boolean deleteAccount(String mobileNumber);
+
+
 }

@@ -16,25 +16,22 @@ import java.time.LocalDateTime;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@Getter
-@Setter
-@ToString
+@Getter @Setter @ToString
 public class BaseEntity {
 
     @CreatedDate
-    @Column(name = "created_at", updatable = false)
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @CreatedBy
-    @Column(name = "created_by", updatable = false)
+    @Column(updatable = false)
     private String createdBy;
 
     @LastModifiedDate
-    @Column(name = "updated_at", insertable = false)
+    @Column(insertable = false)
     private LocalDateTime updatedAt;
 
     @LastModifiedBy
-    @Column(name = "updated_by", insertable = false)
+    @Column(insertable = false)
     private String updatedBy;
 }
-

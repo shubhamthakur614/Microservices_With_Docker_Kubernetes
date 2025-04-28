@@ -6,19 +6,19 @@ import lombok.Data;
 
 @Schema(
         name = "Response",
-        description = "Schema to hold Successful response information"
+        description = "Schema to hold successful response information"
 )
-@Data
-@AllArgsConstructor
+@Data @AllArgsConstructor
 public class ResponseDto {
 
     @Schema(
-            description = "Status Code of the Response",example = "200"
+            description = "Status code in the response"
     )
     private String statusCode;
 
     @Schema(
-            description = "Request processed Successfully",example = "Success"
+            description = "Status message in the response"
     )
-    private String statusMessage;
+    private String statusMsg;
+    
 }

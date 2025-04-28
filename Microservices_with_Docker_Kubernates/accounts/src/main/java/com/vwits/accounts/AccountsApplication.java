@@ -10,29 +10,33 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
+/*@ComponentScans({ @ComponentScan("com.vwits.accounts.controller") })
+@EnableJpaRepositories("com.vwits.accounts.repository")
+@EntityScan("com.vwits.accounts.model")*/
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
 @OpenAPIDefinition(
-        info = @Info(
-                title = "Account Microservice Rest API Documentation",
-                description = "Account Microservice Rest API Documentation",
-                version = "V1.0",
-                contact = @Contact(
-                        name = "Shubham Thakur",
-                        email = "shubhamthakur614@gmail.com"
-                ),
-                license = @License(
-                    name = "Apache 2.0",
-                    url = "https://www.apache.org/licenses/LICENSE-2.0"
-                )
-        ),externalDocs = @ExternalDocumentation(
-            description = "VWITS Documentation",
-                    url = "https://www.vwits.in"
-        )
+		info = @Info(
+				title = "Accounts microservice REST API Documentation",
+				description = "EazyBank Accounts microservice REST API Documentation",
+				version = "v1",
+				contact = @Contact(
+						name = "Shubham Thakur",
+						email = "shubhamthakur614@gmail.com"
+				),
+				license = @License(
+						name = "Apache 2.0",
+						url = "https://www.apache.org/licenses/LICENSE-2.0"
+				)
+		),
+		externalDocs = @ExternalDocumentation(
+				description =  "EazyBank Accounts microservice REST API Documentation",
+				url = ""
+		)
 )
 public class AccountsApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(AccountsApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(AccountsApplication.class, args);
+	}
 
 }
