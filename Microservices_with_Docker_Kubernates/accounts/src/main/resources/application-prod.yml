@@ -1,0 +1,16 @@
+spring:
+  config:
+    active:
+      on-profile: "prod"
+
+build:
+  version: "3.0"
+
+accounts:
+  message: "Welcome to Eazybank Accounts related to PROD APIs"
+  contactDetails:
+    name: "Vivek -Product Owner"
+    email: "vivek@example.com"
+  onCallSupport:
+    - (515)555-1234
+    - (515)555-1235

@@ -16,9 +16,16 @@ spring:
       ddl-auto: update
     show-sql: true
     format-sql: true
+  profiles:
+    active: "prod"
 
 build:
   version: "1.0"
+
+#  config:
+#    import:
+#    - "application-qa.yml"
+#    - "application-prod.yml"
 
 accounts:
   message: "Welcome to Eazybank Accounts related to local APIs"
