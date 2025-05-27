@@ -15,6 +15,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    format-sql: true
+
+build:
+  version: "1.0"
+
 
 #SQL Configuration
 #spring:

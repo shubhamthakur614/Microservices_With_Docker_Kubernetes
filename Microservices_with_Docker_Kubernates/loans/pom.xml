@@ -73,13 +73,25 @@
 
 	<build>
 		<plugins>
+<!--			<plugin>-->
+<!--				<groupId>org.springframework.boot</groupId>-->
+<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--				<configuration>-->
+<!--					<image>-->
+<!--						<name>shubhamthakur614/${project.artifactId}:v1</name>-->
+<!--					</image>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+
+			<!--            google jib library-->
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.2</version>
 				<configuration>
-					<image>
-						<name>shubhamthakur614/${project.artifactId}:v1</name>
-					</image>
+					<to>
+						<image>shubhamthakur614/${project.artifactId}:v2</image>
+					</to>
 				</configuration>
 			</plugin>
 			<plugin>
