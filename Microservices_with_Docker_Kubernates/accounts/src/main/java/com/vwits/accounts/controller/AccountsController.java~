@@ -217,7 +217,7 @@ public class AccountsController {
             )
     }
     )
-    @GetMapping("/contact-info")
+    @GetMapping("/build-info")
     public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
         return ResponseEntity
                 .status(HttpStatus.OK)

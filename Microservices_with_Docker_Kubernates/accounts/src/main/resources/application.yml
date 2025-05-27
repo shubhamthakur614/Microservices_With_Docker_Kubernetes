@@ -20,6 +20,15 @@ spring:
 build:
   version: "1.0"
 
+accounts:
+  message: "Welcome to Eazybank Accounts related to local APIs"
+  contactDetails:
+    name: "Shubham Thakur"
+    email: "shubham@example.com"
+  onCallSupport:
+    - (555)555-1234
+    - (525)555-1235
+
 
 #SQL Configuration
 #spring:
