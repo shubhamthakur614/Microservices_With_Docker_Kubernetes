@@ -15,6 +15,11 @@ spring:
       ddl-auto: update
     show-sql: true
     format-sql: true
+  management:
+   endpoints:
+    web:
+      exposure:
+        include: "*"
 
 build:
   version: "1.0"
