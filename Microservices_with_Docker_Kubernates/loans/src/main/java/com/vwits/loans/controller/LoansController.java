@@ -2,6 +2,7 @@ package com.vwits.loans.controller;
 
 import com.vwits.loans.constants.LoansConstants;
 import com.vwits.loans.dto.ErrorResponseDto;
+import com.vwits.loans.dto.LoansContactInfoDto;
 import com.vwits.loans.dto.LoansDto;
 import com.vwits.loans.dto.ResponseDto;
 import com.vwits.loans.service.ILoansService;
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,10 +34,17 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class LoansController {
 
-    @Value(value = "${build.version}")
+    private ILoansService iLoansService;
+
+    public LoansController(ILoansService iLoansService) {
+        this.iLoansService = iLoansService;
+    }
+
+    @Value("${build.version}")
     private String buildVersion;
 
-    private ILoansService iLoansService;
+    @Autowired
+    private LoansContactInfoDto loansContactInfoDto;
 
     @Operation(
             summary = "Create Loan REST API",
@@ -166,8 +175,8 @@ public class LoansController {
     }
 
     @Operation(
-            summary = "Get Build Information",
-            description = "Get Build Information that deployed into Loans Microservice"
+            summary = "Get Build information",
+            description = "Get Build information that is deployed into cards microservice"
     )
     @ApiResponses({
             @ApiResponse(
@@ -184,10 +193,35 @@ public class LoansController {
     }
     )
     @GetMapping("/build-info")
-    public ResponseEntity<String> getBuildVersion() {
+    public ResponseEntity<String> getBuildInfo() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(buildVersion);
+    }
+
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<LoansContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(loansContactInfoDto);
     }
 
 }

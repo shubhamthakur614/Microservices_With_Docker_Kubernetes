@@ -1,6 +1,10 @@
 server:
   port: 8090
 spring:
+  application:
+    name: loans
+  profiles:
+    active: "qa"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -15,14 +19,21 @@ spring:
       ddl-auto: update
     show-sql: true
     format-sql: true
-  management:
-   endpoints:
-    web:
-      exposure:
-        include: "*"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+    rabbitmq:
+      host: "localhost"
+      port: 5672
+      username: "guest"
+      password: "guest"
 
-build:
-  version: "1.0"
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+
 
 #spring:
 #  datasource:
