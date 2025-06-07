@@ -9,7 +9,7 @@ spring:
 
   # SQL Configuration
   datasource:
-    url: jdbc:mysql://localhost:3306/db_cards?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3309/cardsdb?createDatabaseIfNotExist=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
